@@ -110,14 +110,14 @@ const App: React.FC = () => {
     if (context.state === 'suspended') context.resume();
     
     const time = startTime || context.currentTime;
-    // Increased pitch: 1760Hz is a high A6 (much higher than previous 987Hz)
+    // Increased pitch: 1760Hz is a high A6
     const fundamental = 1760; 
     const overtones = [2, 3, 4.1, 5.42];
-    const volumes = [0.5, 0.3, 0.1, 0.2, 0.1]; // Slightly boosted relative volumes
+    const volumes = [0.5, 0.3, 0.1, 0.2, 0.1]; 
     const decay = 1.5;
 
     const masterGain = context.createGain();
-    // Increased volume: 1.2 is much louder (previously 0.3)
+    // Increased volume: 1.2 is much louder
     masterGain.gain.setValueAtTime(1.2, time); 
     masterGain.connect(context.destination);
 
